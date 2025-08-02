@@ -1,4 +1,4 @@
-**Demo Site, Main Chatbot Check in project:**
+**"Demo Site, but the project's Main feature chatbot check:**
 
 Great! Based on what you shared — you're creating a **personal site** that includes a **chatbot AI**, built using **React** on the frontend and **Node.js** (likely with Express or another backend) — here’s a **customized README.md** for your project:
 
