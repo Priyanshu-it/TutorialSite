@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/TutorialSite/static/css/main.3c4dece1.css",
-    "main.js": "/TutorialSite/static/js/main.950516bb.js",
-    "index.html": "/TutorialSite/index.html",
-    "main.3c4dece1.css.map": "/TutorialSite/static/css/main.3c4dece1.css.map",
-    "main.950516bb.js.map": "/TutorialSite/static/js/main.950516bb.js.map"
+    "main.css": "/tutorial-chatbot/static/css/main.3c4dece1.css",
+    "main.js": "/tutorial-chatbot/static/js/main.950516bb.js",
+    "index.html": "/tutorial-chatbot/index.html",
+    "main.3c4dece1.css.map": "/tutorial-chatbot/static/css/main.3c4dece1.css.map",
+    "main.950516bb.js.map": "/tutorial-chatbot/static/js/main.950516bb.js.map"
   },
   "entrypoints": [
     "static/css/main.3c4dece1.css",
