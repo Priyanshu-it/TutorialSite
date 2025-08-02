@@ -90,14 +90,6 @@ export const responses = {
     "Technologies used: React.js, HTML, CSS, JavaScript."
   ],
 
-  jobprep: [
-    "Focus on mastering data structures and algorithms in Java for 4-5 lakh jobs.",
-    "Practice coding problems on platforms like LeetCode, GeeksforGeeks, and HackerRank.",
-    "Understand time and space complexity to optimize your solutions.",
-    "Prepare for behavioral interviews and system design basics.",
-    "Build a strong resume highlighting your problem-solving skills and projects."
-  ],
-
   default: [
     "I can help you learn deep DSA concepts in Java for job preparation!",
     "Try asking about arrays, linked lists, stacks, queues, trees, graphs, sorting, searching, or dynamic programming.",
