@@ -37,14 +37,7 @@ README.md
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/your-username/ai-chatbot-site.git
-cd ai-chatbot-site
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 #### Frontend
 
@@ -128,9 +121,7 @@ Optional: serve frontend from backend using Express static middleware.
 
 * Chat history persistence (MongoDB / Firebase)
 * User authentication (JWT / OAuth)
-* Dark mode / accessibility improvements
 * Voice input and response
 
 ---
-
-Would you like a basic starter codebase (`App.js`, `server.js`, etc.) to go along with this README? Let me know!
+Let me know!
