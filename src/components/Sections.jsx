@@ -271,32 +271,6 @@ void dfs(int node, boolean[] visited, List<List<Integer>> graph) {
         </a>
       </p>
     </section>
-
-    <details>
-      <section id="jobprep">
-        <h2>"Job Preparation Tips for DSA"</h2>
-        <ul>
-          <li>
-            <strong>Practice daily:</strong> Use LeetCode, CodeChef, and HackerRank.
-          </li>
-          <li>
-            <strong>Master basics:</strong> Arrays, Linked Lists, Trees, Graphs, etc.
-          </li>
-          <li>
-            <strong>Understand complexities:</strong> Big O notation is essential.
-          </li>
-          <li>
-            <strong>Mock interviews:</strong> Try Pramp or InterviewBit.
-          </li>
-          <li>
-            <strong>Write clean code:</strong> Focus on speed and accuracy.
-          </li>
-          <li>
-            <strong>Revise Java & OOP:</strong> Strong Java knowledge is key.
-          </li>
-        </ul>
-      </section>
-    </details>
   </>
 );
 
