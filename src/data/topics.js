@@ -97,16 +97,5 @@ export const topics = [
       "what is website development", "how to become a developer", "why development matters",
       "how to build a website", "what does a developer do"
     ]
-  },
-  {
-    topic: "jobprep",
-    keywords: [
-      "job preparation", "interview preparation", "ds algo interview",
-      "coding interview", "java interview questions", "technical interview",
-      "leetcode", "gfg practice", "mock interviews", "resume tips",
-      "4-5 lakh jobs", "software developer jobs", "job tips",
-      "how to prepare for coding interview", "what is job preparation", "how to get a software job",
-      "what questions are asked in interviews", "how to crack coding interview"
-    ]
   }
 ];
