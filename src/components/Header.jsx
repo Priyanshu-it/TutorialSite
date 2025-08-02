@@ -12,7 +12,6 @@ const Header = () => (
       <a href="#sorting">Sorting Algorithms</a>
       <a href="#searching">Searching Algorithms</a>
       <a href="#dp">Dynamic Programming</a>
-      <a href="#jobprep">Job Preparation Tips</a>
     </nav>
   </header>
 );
