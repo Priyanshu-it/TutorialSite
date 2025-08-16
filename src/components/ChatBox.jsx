@@ -20,7 +20,30 @@ const ChatBox = () => {
   const [messages, setMessages] = useState([{ sender: '🤖 ', text: ' Ask a question to get started..' }]);
   const [input, setInput] = useState('');
   const [show, setShow] = useState(false);
+  const [typingText, setTypingText] = useState('');
   const chatEndRef = useRef(null);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  useEffect(() => {
+    let typingInterval;
+    if (typingText) {
+      let dots = 0;
+      typingInterval = setInterval(() => {
+        dots = (dots + 1) % 4;
+        const dotStr = '.'.repeat(dots);
+        setMessages(prev => {
+          const updated = [...prev];
+          updated[updated.length - 1] = { sender: '🤖Reply ', text: `Typing${dotStr}` };
+          return updated;
+        });
+      }, 500);
+    }
+
+    return () => clearInterval(typingInterval);
+  }, [typingText]);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -28,27 +51,21 @@ const ChatBox = () => {
     const userMsg = { sender: '🧑You ', text: input };
     const topic = findMatchedTopic(input);
     const replyList = responses[topic] || responses['default'];
-    const botMsg = { sender: '🤖Reply ', text: replyList[Math.floor(Math.random() * replyList.length)] };
+    const botReplyText = replyList[Math.floor(Math.random() * replyList.length)];
 
-    setMessages(prev => [...prev, userMsg, botMsg]);
+    setMessages(prev => [...prev, userMsg, { sender: '🤖Reply ', text: 'Typing' }]);
     setInput('');
-  };
+    setTypingText('Typing');
 
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
-
-  // ⏱️ 5-second timer only when chatbox is open
-  useEffect(() => {
-    if (!show) return;
-
-    const interval = setInterval(() => {
-      const botMsg = { sender: '🤖Timer ', text: 'Just checking in! Need any help?' };
-      setMessages(prev => [...prev, botMsg]);
+    setTimeout(() => {
+      setMessages(prev => {
+        const updated = [...prev];
+        updated[updated.length - 1] = { sender: '🤖Reply ', text: botReplyText };
+        return updated;
+      });
+      setTypingText('');
     }, 5000);
-
-    return () => clearInterval(interval);
-  }, [show]);
+  };
 
   return (
     <>
@@ -65,10 +82,7 @@ const ChatBox = () => {
         <div className="chatbox">
           <header>
             <span><b>@ ChatBot Help</b></span>
-            <button
-              onClick={() => setShow(false)}
-              style={{ float: 'right', background: 'transparent', border: 'none', color: '#fff' }}
-            >✖</button>
+            <button onClick={() => setShow(false)} style={{ float: 'right', background: 'transparent', border: 'none', color: '#fff' }}>✖</button>
           </header>
           <div className="chatlog">
             {messages.map((msg, idx) => (
