@@ -38,6 +38,18 @@ const ChatBox = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // ⏱️ 5-second timer only when chatbox is open
+  useEffect(() => {
+    if (!show) return;
+
+    const interval = setInterval(() => {
+      const botMsg = { sender: '🤖Timer ', text: 'Just checking in! Need any help?' };
+      setMessages(prev => [...prev, botMsg]);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [show]);
+
   return (
     <>
       {!show && (
@@ -53,7 +65,10 @@ const ChatBox = () => {
         <div className="chatbox">
           <header>
             <span><b>@ ChatBot Help</b></span>
-            <button onClick={() => setShow(false)} style={{ float: 'right', background: 'transparent', border: 'none', color: '#fff' }}>✖</button>
+            <button
+              onClick={() => setShow(false)}
+              style={{ float: 'right', background: 'transparent', border: 'none', color: '#fff' }}
+            >✖</button>
           </header>
           <div className="chatlog">
             {messages.map((msg, idx) => (
