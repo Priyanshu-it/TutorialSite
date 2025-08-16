@@ -30,7 +30,7 @@ const ChatBox = () => {
     const userMsg = { sender: '🧑You ', text: input };
     const topic = findMatchedTopic(input);
     const replyList = responses[topic] || responses['default'];
-    const botTypingMsg = { sender: '🤖Reply ', text: 'typing...' };
+    const botTypingMsg = { sender: '🤖Reply ', text: 'Typing..' };
 
     // Add user message and typing placeholder
     setMessages(prev => [...prev, userMsg, botTypingMsg]);
